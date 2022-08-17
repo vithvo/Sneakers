@@ -1,41 +1,47 @@
 import React from "react";
 
-export default function Drawer() {
+import styles from "./Drawer.module.scss";
+
+export default function Drawer({ onClose }) {
   return (
-    <div style={{ display: "none" }} className="overlay">
-      <div className="overlay__drawer">
+    <div className={styles.overlay}>
+      <div className={styles.overlayDrawer}>
         <h2 className="mb-30 d-flex justify-between">
           Корзина
-          <img className="remove cu-p" src="img/xButton.svg" alt="Remove" />
+          <img
+            onClick={onClose}
+            className="remove cu-p"
+            src="img/xButton.svg"
+            alt="Remove"
+          />
         </h2>
 
-        <div className="overlay__items">
-          {" "}
-          <div className="cart d-flex align-center mb-20">
+        <div className={styles.overlayItems}>
+          <div className={styles.cart}>
             <div
               style={{ backgroundImage: "url(/img/sneakers/1.png)" }}
-              className="cart__img"
+              className={styles.cartImg}
             ></div>
             <div className="mr-20 flex">
               <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
               <b>12 999 руб.</b>
             </div>
-            <img className="remove" src="img/xButton.svg" alt="Remove" />
+            <img className={styles.remove} src="img/xButton.svg" alt="Remove" />
           </div>
-          <div className="cart d-flex align-center">
+          <div className={styles.cart}>
             <div
               style={{ backgroundImage: "url(/img/sneakers/1.png)" }}
-              className="cart__img"
+              className={styles.cartImg}
             ></div>
             <div className="mr-20 flex">
               <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
               <b>12 999 руб.</b>
             </div>
-            <img className="remove" src="img/xButton.svg" alt="Remove" />
+            <img className={styles.remove} src="img/xButton.svg" alt="Remove" />
           </div>
         </div>
 
-        <div className="overlay__total">
+        <div className={styles.overlayTotal}>
           <ul>
             <li className="d-flex">
               <span>Итого: </span>
@@ -48,7 +54,7 @@ export default function Drawer() {
               <b>1074 руб. </b>
             </li>
           </ul>
-          <button className="greenButton">
+          <button className={styles.greenButton}>
             Оформить заказ
             <img src="img/arrow.svg" alt="arrow" />
           </button>
