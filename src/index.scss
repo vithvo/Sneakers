@@ -55,6 +55,19 @@ header {
   &__favorite {
     position: absolute;
     cursor: pointer;
+    img {
+      opacity: 0.9;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .button {
+    opacity: 0.9;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -99,9 +112,6 @@ header {
 
     display: flex;
     flex-direction: column;
-
-    h2 {
-    }
   }
 
   &__items {

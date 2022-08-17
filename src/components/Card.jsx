@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Card() {
+export default function Card({ name, price, img }) {
   return (
     <div className="card">
       <div className="card__favorite">
@@ -9,17 +9,17 @@ export default function Card() {
       <img
         width={133}
         height={112}
-        src="/img/sneakers/1.png"
+        src={img}
         alt="sneakers"
         className="mb-15"
       />
-      <h5 className="mb-15">Кроссовки Puma X Aka Boku Future Rider</h5>
+      <h5 className="mb-15">{name}</h5>
       <div className=" card__bottom d-flex justify-between align-center">
         <div className="d-flex flex-column">
           <span className="mb-5">Цена:</span>
-          <b>12 999 руб.</b>
+          <b>{price}</b>
         </div>
-        <button className="button">
+        <button onClick={() => alert("123")} className="button">
           <svg
             width="11"
             height="11"

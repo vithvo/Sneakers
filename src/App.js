@@ -1,63 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./components/Card";
+import Drawer from "./components/Drawer";
 import Header from "./components/Header";
+
+const arr = [
+  {
+    name: "Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12 999 руб.",
+    img: "/img/sneakers/1.png",
+  },
+  {
+    name: "Мужские Кроссовки Jordan Air Jordan 11",
+    price: "15 800 руб.",
+    img: "/img/sneakers/2.png",
+  },
+  {
+    name: "Мужские Кроссовки Nike Kyrie 7",
+    price: "21 200 руб.",
+    img: "/img/sneakers/3.png",
+  },
+  {
+    name: "Мужские Кроссовки Nike Air Max 270",
+    price: "22 700 руб.",
+    img: "/img/sneakers/4.png",
+  },
+];
 
 function App() {
   return (
     <div className="wrapper clear">
-      <div style={{ display: "none" }} className="overlay">
-        <div className="overlay__drawer">
-          <h2 className="mb-30 d-flex justify-between">
-            Корзина
-            <img className="remove cu-p" src="img/xButton.svg" alt="Remove" />
-          </h2>
-
-          <div className="overlay__items">
-            {" "}
-            <div className="cart d-flex align-center mb-20">
-              <div
-                style={{ backgroundImage: "url(/img/sneakers/1.png)" }}
-                className="cart__img"
-              ></div>
-              <div className="mr-20 flex">
-                <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-                <b>12 999 руб.</b>
-              </div>
-              <img className="remove" src="img/xButton.svg" alt="Remove" />
-            </div>
-            <div className="cart d-flex align-center">
-              <div
-                style={{ backgroundImage: "url(/img/sneakers/1.png)" }}
-                className="cart__img"
-              ></div>
-              <div className="mr-20 flex">
-                <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-                <b>12 999 руб.</b>
-              </div>
-              <img className="remove" src="img/xButton.svg" alt="Remove" />
-            </div>
-          </div>
-
-          <div className="overlay__total">
-            <ul>
-              <li className="d-flex">
-                <span>Итого: </span>
-                <div></div>
-                <b>21 498 руб. </b>
-              </li>
-              <li className="d-flex">
-                <span>Налог 5%: </span>
-                <div></div>
-                <b>1074 руб. </b>
-              </li>
-            </ul>
-            <button className="greenButton">
-              Оформить заказ
-              <img src="img/arrow.svg" alt="arrow" />
-            </button>
-          </div>
-        </div>
-      </div>
+      <Drawer />
 
       <Header />
 
@@ -72,10 +44,11 @@ function App() {
         <div className="content__sneakers d-flex justify-between flex-wrap">
           {/* Отдельная карточка товара */}
 
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {arr.map((arr, i) => {
+            return (
+              <Card key={i} name={arr.name} price={arr.price} img={arr.img} />
+            );
+          })}
         </div>
       </div>
     </div>
