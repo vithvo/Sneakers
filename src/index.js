@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import "./index.scss";
 import "macro-css";
+import "lodash";
 
 import App from "./App";
 

@@ -2,14 +2,16 @@ import React from "react";
 
 import styles from "./Card.module.scss";
 
-export default function Card({ name, price, img, onPlus, onFavorite }) {
+export default function Card({ name, price, img, id, onPlus, onFavorite }) {
   const [isAdded, setIsAdded] = React.useState(false);
   const [isLiked, setIsLiked] = React.useState(false);
 
   const onClickPlus = () => {
+    onPlus({ name, price, img, id });
     setIsAdded(!isAdded);
   };
   const onClickLike = () => {
+    onFavorite();
     setIsLiked(!isLiked);
   };
 

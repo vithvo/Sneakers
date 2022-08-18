@@ -15,15 +15,14 @@
     padding: 30px;
     background: #ffffff;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-
     display: flex;
     flex-direction: column;
   }
 
   .overlayItems {
-    flex: 1;
     overflow: auto;
     margin-bottom: 40px;
+    flex: 1;
   }
   .overlayTotal {
     ul {
@@ -118,5 +117,44 @@
   }
   &:active {
     background: darken(#9dd558, 10%);
+  }
+}
+
+.cartEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  .emptyImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+    text-align: center;
+  }
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
   }
 }
