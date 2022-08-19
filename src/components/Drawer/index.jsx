@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import styles from "./Drawer.module.scss";
 
@@ -17,11 +17,11 @@ export default function Drawer({ onClose, onRemove, items = [] }) {
         </h2>
 
         {items.length > 0 ? (
-          <div>
+          <Fragment>
             <div className={styles.overlayItems}>
-              {items.map((obj) => {
+              {items.map((obj, index) => {
                 return (
-                  <div key={obj.id} className={styles.cart}>
+                  <div key={index} className={styles.cart}>
                     <div
                       style={{ backgroundImage: `url(${obj.img})` }}
                       className={styles.cartImg}
@@ -59,7 +59,7 @@ export default function Drawer({ onClose, onRemove, items = [] }) {
                 <img src="img/arrow.svg" alt="arrow" />
               </button>
             </div>
-          </div>
+          </Fragment>
         ) : (
           <div className={styles.cartEmpty}>
             <div className={styles.emptyImg}>
