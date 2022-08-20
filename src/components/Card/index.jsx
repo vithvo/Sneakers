@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import ContentLoader from "react-content-loader";
 
 import styles from "./Card.module.scss";
+import AppContext from "../../context";
 
 export default function Card({
   name,
@@ -14,12 +15,14 @@ export default function Card({
   added = false,
   loading = false,
 }) {
-  const [isAdded, setIsAdded] = React.useState(added);
+  const { isItemAdded } = useContext(AppContext);
+
   const [isLiked, setIsLiked] = React.useState(favorited);
+
+  console.log(id, isItemAdded(id));
 
   const onClickPlus = () => {
     onPlus({ name, price, img, id });
-    setIsAdded(!isAdded);
   };
   const onClickLike = () => {
     onFavorite({ name, price, img, id });
@@ -68,7 +71,9 @@ export default function Card({
             <div>
               <img
                 onClick={onClickPlus}
-                src={isAdded ? "/img/okButton.svg" : "/img/plusButton.svg"}
+                src={
+                  isItemAdded(id) ? "/img/okButton.svg" : "/img/plusButton.svg"
+                }
                 alt="Plus"
                 className="cu-p"
               />

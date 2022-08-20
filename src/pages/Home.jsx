@@ -9,27 +9,25 @@ export default function Home({
   items,
   onAddToCart,
   onAddToFavorite,
-  cartItems,
   isLoading,
+  cartItems,
 }) {
   const renderItems = () => {
     const filtredItems = items.filter((item) => {
       return item.name.toLowerCase().includes(searchValue.toLowerCase());
     });
-    return (isLoading ? [...Array(items.length)] : filtredItems).map(
-      (item, index) => {
-        return (
-          <Card
-            added={cartItems.some((obj) => Number(obj.id) === Number(item.id))}
-            key={index}
-            onPlus={(obj) => onAddToCart(obj)}
-            onFavorite={(obj) => onAddToFavorite(obj)}
-            loading={isLoading}
-            {...item}
-          />
-        );
-      }
-    );
+    return (isLoading ? [...Array(20)] : filtredItems).map((item, index) => {
+      return (
+        <Card
+          // added={isItemAdded(item && item.id)}
+          key={index}
+          onPlus={(obj) => onAddToCart(obj)}
+          onFavorite={(obj) => onAddToFavorite(obj)}
+          loading={isLoading}
+          {...item}
+        />
+      );
+    });
   };
 
   return (

@@ -1,7 +1,11 @@
-import React from "react";
-import Card from "../components/Card";
+import React, { useContext } from "react";
 
-export default function Favorites({ items, onAddToCart, onAddToFavorite }) {
+import Card from "../components/Card";
+import AppContext from "../context";
+
+export default function Favorites({ onAddToCart, onAddToFavorite }) {
+  const { favorites } = useContext(AppContext);
+
   return (
     <div className="conten p-40">
       <div className="d-flex align-center mb-40 justify-between">
@@ -9,7 +13,7 @@ export default function Favorites({ items, onAddToCart, onAddToFavorite }) {
       </div>
       <div className="content__sneakers d-flex flex-wrap justify-around">
         {/* Отдельная карточка товара */}
-        {items.map((item, index) => {
+        {favorites.map((item, index) => {
           return (
             <Card
               favorited={true}
