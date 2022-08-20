@@ -1,0 +1,48 @@
+.cartEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  .emptyImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+    text-align: center;
+  }
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+}
+
+.greenButtonEmpty {
+  width: 240px;
+  height: 55px;
+  background: #9dd558;
+  border-radius: 18px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  margin-top: 40px;
+
+  &:hover {
+    img {
+      transform: rotate(180deg) translateX(3px);
+    }
+  }
+
+  img {
+    position: relative;
+
+    top: 1px;
+    transform: rotate(180deg);
+    margin-right: 15px;
+    transition: transform 0.15s ease-in-out;
+  }
+}

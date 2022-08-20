@@ -10,7 +10,6 @@ export default function Home({
   onAddToCart,
   onAddToFavorite,
   isLoading,
-  cartItems,
 }) {
   const renderItems = () => {
     const filtredItems = items.filter((item) => {

@@ -68,18 +68,21 @@ function App({}) {
     setSearchValue(event.target.value);
   };
 
-  const onAddToFavorite = async (obj) => {
+  const onAddToFavorite = (obj) => {
     try {
-      if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
+      if (favorites.find((item) => Number(item.id) === Number(obj.id))) {
         axios.delete(
           `https://62fce450b9e38585cd48466c.mockapi.io/Favorites/${obj.id}`
         );
+        setFavorites((prev) =>
+          prev.filter((item) => Number(item.id) !== Number(obj.id))
+        );
       } else {
-        const { data } = await axios.post(
+        axios.post(
           "https://62fce450b9e38585cd48466c.mockapi.io/Favorites",
           obj
         );
-        setFavorites((prev) => [...prev, data]);
+        setFavorites((prev) => [...prev, obj]);
       }
     } catch (error) {
       alert("Не удалось добавить товар в закладки");
@@ -89,10 +92,22 @@ function App({}) {
   const isItemAdded = (id) => {
     return cartItems.some((obj) => Number(obj.id) === Number(id));
   };
+  const isItemLiked = (id) => {
+    return favorites.some((obj) => Number(obj.id) === Number(id));
+  };
 
   return (
     <AppContext.Provider
-      value={{ items, cartItems, favorites, isItemAdded, isLoading }}
+      value={{
+        items,
+        cartItems,
+        favorites,
+        isItemAdded,
+        isItemLiked,
+        isLoading,
+        setCartOpened,
+        setCartItems,
+      }}
     >
       <div className="wrapper clear">
         {cartOpened && (

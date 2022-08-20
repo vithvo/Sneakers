@@ -11,22 +11,15 @@ export default function Card({
   id,
   onPlus,
   onFavorite,
-  favorited = false,
-  added = false,
   loading = false,
 }) {
-  const { isItemAdded } = useContext(AppContext);
-
-  const [isLiked, setIsLiked] = React.useState(favorited);
-
-  console.log(id, isItemAdded(id));
+  const { isItemAdded, isItemLiked } = useContext(AppContext);
 
   const onClickPlus = () => {
     onPlus({ name, price, img, id });
   };
   const onClickLike = () => {
     onFavorite({ name, price, img, id });
-    setIsLiked(!isLiked);
   };
 
   return (
@@ -51,7 +44,9 @@ export default function Card({
         <Fragment>
           <div onClick={onClickLike} className={styles.favorite}>
             <img
-              src={isLiked ? "/img/heartLike.svg" : "/img/heartUnlike.svg"}
+              src={
+                isItemLiked(id) ? "/img/heartLike.svg" : "/img/heartUnlike.svg"
+              }
               alt="heart"
             />
           </div>
