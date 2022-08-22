@@ -62,7 +62,7 @@ export default function Header({ onClickCart }) {
                 width={18}
                 height={18}
                 className="cu-p"
-                src={totalPrice > 0 ? "img/userFill.svg" : "img/user.svg"}
+                src="img/user.svg"
                 alt="User"
               />
             </Link>
