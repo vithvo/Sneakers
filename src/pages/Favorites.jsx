@@ -4,8 +4,8 @@ import Card from "../components/Card";
 import AppContext from "../context";
 
 export default function Favorites({ onAddToCart, onAddToFavorite }) {
-  const { favorites } = useContext(AppContext);
-
+  const { favorites, isLoading } = useContext(AppContext);
+  console.log("favFav", favorites);
   return (
     <div className="conten p-40">
       <div className="d-flex align-center mb-40 justify-between">
@@ -16,7 +16,7 @@ export default function Favorites({ onAddToCart, onAddToFavorite }) {
         {favorites.map((item, index) => {
           return (
             <Card
-              favorited={true}
+              loading={isLoading}
               key={index}
               onPlus={(obj) => onAddToCart(obj)}
               onFavorite={(obj) => onAddToFavorite(obj)}

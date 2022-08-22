@@ -1,4 +1,5 @@
 .overlay {
+  opacity: 0;
   position: absolute;
   left: 0;
   top: 0;
@@ -6,17 +7,20 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  overflow: hidden;
   .overlayDrawer {
     position: absolute;
     width: 420px;
     height: 100%;
-    right: 0px;
+    right: -420px;
     padding: 30px;
     background: #ffffff;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease-out;
   }
 
   .overlayItems {
@@ -136,5 +140,13 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+.overlayVisible {
+  visibility: visible;
+  opacity: 1;
+  .overlayDrawer {
+    right: 0px;
   }
 }

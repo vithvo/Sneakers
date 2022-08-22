@@ -18,7 +18,7 @@ export default function Home({
     return (isLoading ? [...Array(20)] : filtredItems).map((item, index) => {
       return (
         <Card
-          // added={isItemAdded(item && item.id)}
+
           key={index}
           onPlus={(obj) => onAddToCart(obj)}
           onFavorite={(obj) => onAddToFavorite(obj)}

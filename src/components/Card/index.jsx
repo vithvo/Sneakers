@@ -9,17 +9,19 @@ export default function Card({
   price,
   img,
   id,
+  idItem,
   onPlus,
   onFavorite,
   loading = false,
 }) {
   const { isItemAdded, isItemLiked } = useContext(AppContext);
+  const obj = { name, price, img, id, idItem };
 
   const onClickPlus = () => {
-    onPlus({ name, price, img, id });
+    onPlus(obj);
   };
   const onClickLike = () => {
-    onFavorite({ name, price, img, id });
+    onFavorite(obj);
   };
 
   return (
@@ -42,14 +44,20 @@ export default function Card({
         </ContentLoader>
       ) : (
         <Fragment>
-          <div onClick={onClickLike} className={styles.favorite}>
-            <img
-              src={
-                isItemLiked(id) ? "/img/heartLike.svg" : "/img/heartUnlike.svg"
-              }
-              alt="heart"
-            />
-          </div>
+          {onFavorite && (
+            <div>
+              <img
+                onClick={onClickLike}
+                className={styles.favorite}
+                src={
+                  isItemLiked(idItem)
+                    ? "/img/heartLike.svg"
+                    : "/img/heartUnlike.svg"
+                }
+                alt="heart"
+              />
+            </div>
+          )}
           <img
             width="100%"
             height={135}
@@ -64,14 +72,18 @@ export default function Card({
               <b>{price} руб.</b>
             </div>
             <div>
-              <img
-                onClick={onClickPlus}
-                src={
-                  isItemAdded(id) ? "/img/okButton.svg" : "/img/plusButton.svg"
-                }
-                alt="Plus"
-                className="cu-p"
-              />
+              {onPlus && (
+                <img
+                  onClick={onClickPlus}
+                  src={
+                    isItemAdded(idItem)
+                      ? "/img/okButton.svg"
+                      : "/img/plusButton.svg"
+                  }
+                  alt="Plus"
+                  className="cu-p"
+                />
+              )}
             </div>
           </div>
         </Fragment>
