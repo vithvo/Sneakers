@@ -15,7 +15,7 @@ export default function Home({
     const filtredItems = items.filter((item) => {
       return item.name.toLowerCase().includes(searchValue.toLowerCase());
     });
-    return (isLoading ? [...Array(20)] : filtredItems).map((item, index) => {
+    return (isLoading ? [...Array(12)] : filtredItems).map((item, index) => {
       return (
         <Card
 
