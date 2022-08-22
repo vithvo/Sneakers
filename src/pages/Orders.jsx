@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 import Card from "../components/Card";
-import AppContext from "../context";
+import Info from "../components/Info";
 
 export default function Orders({}) {
   const [orders, setOrders] = useState([]);
@@ -29,11 +29,20 @@ export default function Orders({}) {
       <div className="d-flex align-center mb-40 justify-between">
         <h1 className="">Мои покупки</h1>
       </div>
-      <div className="content__sneakers d-flex flex-wrap justify-around">
+      <div className="content__sneakers d-flex flex-wrap">
         {/* Отдельная карточка товара */}
+
         {(isLoading ? [...Array(12)] : orders).map((item, index) => {
           return <Card key={index} loading={isLoading} {...item} />;
         })}
+        {!orders.length > 0 && !isLoading && (
+          <Info
+            title="У вас нет заказов"
+            description="Что бы увидеть свои покупки -   
+               оформите хотя бы один заказ."
+            image="img/smileDown.svg"
+          />
+        )}
       </div>
     </div>
   );
