@@ -44,7 +44,6 @@ function App({}) {
   items.map((item, i) => {
     return (item.idItem = `${i + 1}`);
   });
-  console.log(items);
 
   const onAddToCart = async (obj) => {
     const findItem = cartItems.find(

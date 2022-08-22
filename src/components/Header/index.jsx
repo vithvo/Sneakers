@@ -8,6 +8,7 @@ import styles from "./Header.module.scss";
 export default function Header({ onClickCart }) {
   const { totalPrice, favorites } = useCart();
 
+
   return (
     <header className="d-flex justify-between align-center p-40">
       <Link to="/" exact="true">
@@ -62,7 +63,7 @@ export default function Header({ onClickCart }) {
                 width={18}
                 height={18}
                 className="cu-p"
-                src="/img/User.svg"
+                src={totalPrice > 0 ? "/img/UserFill.svg" : "/img/User.svg"}
                 alt="User"
               />
             </Link>

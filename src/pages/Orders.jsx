@@ -15,6 +15,7 @@ export default function Orders({}) {
           "https://62fce450b9e38585cd48466c.mockapi.io/Orders"
         );
         setOrders(data.map((obj) => obj.items).flat());
+
         setIsLoading(false);
       } catch (error) {
         alert("Ошибка при запросе заказов");
