@@ -1,4 +1,6 @@
-###HELLO!!!
+# HELLO ! ! !
+
+## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This is the site of a small sneaker store [SNEAKERS](https://vithvo.github.io/Sneakers/) <-- Click here
 
