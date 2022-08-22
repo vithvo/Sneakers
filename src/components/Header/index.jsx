@@ -36,7 +36,7 @@ export default function Header({ onClickCart }) {
               src={
                 totalPrice ? "img/cartLogoFill.svg" : "img/cartLogoEmpty.svg"
               }
-              alt="User"
+              alt="Cart"
             />
 
             <span>{totalPrice} руб.</span>
