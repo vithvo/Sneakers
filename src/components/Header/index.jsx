@@ -10,7 +10,7 @@ export default function Header({ onClickCart }) {
 
   return (
     <header className="d-flex justify-between align-center p-40">
-      <Link to={""} exact="true">
+      <Link to={"/"} exact="true">
         <div className="d-flex align-center">
           <img
             className="mr-15"
@@ -36,33 +36,33 @@ export default function Header({ onClickCart }) {
               src={
                 totalPrice ? "img/cartLogoFill.svg" : "img/cartLogoEmpty.svg"
               }
-              alt="Cart"
+              alt="User"
             />
 
             <span>{totalPrice} руб.</span>
           </li>
           <li>
-            <Link to={"favorites"}>
+            <Link to={"/favorites"}>
               <img
                 width={21}
                 height={19}
                 className="cu-p mr-30"
                 src={
                   favorites.length > 0
-                    ? "img/FavoriteFill.svg"
-                    : "img/FavoriteEmpty.svg"
+                    ? "img/favoriteFill.svg"
+                    : "img/favoriteEmpty.svg"
                 }
                 alt="Favorite"
               />
             </Link>
           </li>
           <li>
-            <Link to={"orders"}>
+            <Link to={"/orders"}>
               <img
                 width={18}
                 height={18}
                 className="cu-p"
-                src="img/User.svg"
+                src={totalPrice > 0 ? "img/userFill.svg" : "img/user.svg"}
                 alt="User"
               />
             </Link>
