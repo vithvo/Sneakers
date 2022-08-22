@@ -51,8 +51,8 @@ export default function Card({
                 className={styles.favorite}
                 src={
                   isItemLiked(idItem)
-                    ? "/img/heartLike.svg"
-                    : "/img/heartUnlike.svg"
+                    ? "img/heartLike.svg"
+                    : "img/heartUnlike.svg"
                 }
                 alt="heart"
               />
@@ -77,8 +77,8 @@ export default function Card({
                   onClick={onClickPlus}
                   src={
                     isItemAdded(idItem)
-                      ? "/img/okButton.svg"
-                      : "/img/plusButton.svg"
+                      ? "img/okButton.svg"
+                      : "img/plusButton.svg"
                   }
                   alt="Plus"
                   className="cu-p"

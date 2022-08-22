@@ -8,10 +8,9 @@ import styles from "./Header.module.scss";
 export default function Header({ onClickCart }) {
   const { totalPrice, favorites } = useCart();
 
-
   return (
     <header className="d-flex justify-between align-center p-40">
-      <Link to="/" exact="true">
+      <Link to={""} exact="true">
         <div className="d-flex align-center">
           <img
             className="mr-15"
@@ -35,35 +34,35 @@ export default function Header({ onClickCart }) {
               height={21}
               className="mr-10"
               src={
-                totalPrice ? "/img/cartLogoFill.svg" : "/img/cartLogoEmpty.svg"
+                totalPrice ? "img/cartLogoFill.svg" : "img/cartLogoEmpty.svg"
               }
-              alt="User"
+              alt="Cart"
             />
 
             <span>{totalPrice} руб.</span>
           </li>
           <li>
-            <Link to="favorites">
+            <Link to={"favorites"}>
               <img
                 width={21}
                 height={19}
                 className="cu-p mr-30"
                 src={
                   favorites.length > 0
-                    ? "/img/FavoriteFill.svg"
-                    : "/img/FavoriteEmpty.svg"
+                    ? "img/FavoriteFill.svg"
+                    : "img/FavoriteEmpty.svg"
                 }
                 alt="Favorite"
               />
             </Link>
           </li>
           <li>
-            <Link to="orders">
+            <Link to={"orders"}>
               <img
                 width={18}
                 height={18}
                 className="cu-p"
-                src={totalPrice > 0 ? "/img/UserFill.svg" : "/img/User.svg"}
+                src="img/User.svg"
                 alt="User"
               />
             </Link>

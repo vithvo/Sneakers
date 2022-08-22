@@ -114,7 +114,7 @@ export default function Drawer({ onClose, onRemove, items = [], opened }) {
                 ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
                 : "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
             }
-            image={isOrderComplited ? "/img/done.svg" : "/img/cartEmpty.svg"}
+            image={isOrderComplited ? "img/done.svg" : "img/cartEmpty.svg"}
           />
         )}
       </div>

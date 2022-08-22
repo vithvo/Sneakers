@@ -36,7 +36,7 @@ export default function Home({
           {searchValue ? `Поиск по запросу "${searchValue}"` : "Все кроссовки"}
         </h1>
         <div className="search d-flex">
-          <img src="/img/search.svg" alt="search" />
+          <img src="img/search.svg" alt="search" />
           <input
             value={searchValue}
             onChange={onChangeSearchInput}
