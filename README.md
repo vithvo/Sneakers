@@ -4,7 +4,7 @@
 
 This is the site of a small sneaker store [SNEAKERS](https://vithvo.github.io/Sneakers/) <-- Click here
 
-###You can:
+### You can:
 - add and remove products to favorites;
 - add and remove items to the cart;
 - place product orders;
@@ -13,7 +13,7 @@ This is the site of a small sneaker store [SNEAKERS](https://vithvo.github.io/Sn
 
 The website uses MockApi.io for the database. All changes are saved there.
 
-###Used in development:
+### Used in development:
 
 - Hooks (useState,useEffect);
 - Context, useContext;
