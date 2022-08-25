@@ -1,6 +1,6 @@
 # HELLO ! ! !
 
-## This is the site of a small sneaker store [SNEAKERS](https://vithvo.github.io/Sneakers/) <-- Click here
+## This is the website of a small sneaker store [SNEAKERS](https://vithvo.github.io/Sneakers/) <-- Click here
 
 ### You can:
 - add and remove products to favorites;
